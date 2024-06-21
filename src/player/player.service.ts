@@ -27,17 +27,16 @@ export class PlayerService {
       console.log('Socket error: ', error);
     });
 
-    this.socket.on('shot', (data: any) => {
+    this.socket.on('get_shot', (data: any) => {
       console.log(`Received shot with intensity: ${data.intensity}`);
-    });
+    })
   }
 
   isSocketConnected():boolean{
     return this.socket && this.socket.connected;
   }
 
-  sendShot() {
-    const intensity = Math.floor(Math.random() * 100); 
+  sendShot(intensity:number) {
     this.socket.emit('shot', { "intensity": intensity });
   }
 
