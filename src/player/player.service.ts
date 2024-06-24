@@ -28,7 +28,7 @@ export class PlayerService {
     });
 
     this.socket.on('error', (error:any) =>{
-      console.log('Socket error:', error);
+      console.log('Socket error:', error.message);
     });
 
     this.socket.on('get_shot', (data: any) => {
