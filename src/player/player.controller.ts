@@ -16,7 +16,7 @@ export class PlayerController {
         this.playerService.connectToServer(hostAddr);
     }
 
-    @Post('/shot')
+    @Post('shot')
     playerShot(@Body() shot:ShotDTO){
         const { intensity } = shot;
         this.playerService.sendShot(intensity);
