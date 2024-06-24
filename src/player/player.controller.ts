@@ -12,7 +12,6 @@ export class PlayerController {
     @Post('connection')
     playerConnection(@Body() hostAdd:HostAddrDTO){
         const { hostAddr } = hostAdd;
-        //console.log("HostAddrDTO recibido: ", hostAdd);
         this.playerService.connectToServer(hostAddr);
     }
 
