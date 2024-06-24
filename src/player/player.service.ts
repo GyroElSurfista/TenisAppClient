@@ -23,8 +23,12 @@ export class PlayerService {
       console.log('Disconnected from server');
     });
 
+    this.socket.on('connect_error', (error: any) => {
+      console.log('Connection error:', error.message);
+    });
+
     this.socket.on('error', (error:any) =>{
-      console.log('Socket error: ', error);
+      console.log('Socket error:', error);
     });
 
     this.socket.on('get_shot', (data: any) => {
